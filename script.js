@@ -1,72 +1,69 @@
-let music = document.getElementById("bgMusic");
-
-/* START */
-function startExperience(){
-music.play();
-startTyping();
-}
-
-/* CHAT TYPING */
-const text = "I am truly sorry... I never wanted to hurt you. You mean a lot to me ❤️";
-
 let i = 0;
+
+const text = "I am truly sorry... I never wanted to hurt you. You are still the most important person in my life ❤️";
+
+function startExperience(){
+
+  // 🎬 video start
+  let video = document.getElementById("bgVideo");
+  video.muted = false;
+  video.volume = 1;
+
+  video.play().catch(()=>{});
+
+  // 💌 typing
+  startTyping();
+
+  // ❤️ effects
+  hearts();
+  petals();
+}
+
+/* 💌 typing effect */
 function startTyping(){
-let el = document.getElementById("typingText");
-if(i < text.length){
-el.innerHTML += text[i];
-i++;
-setTimeout(startTyping,40);
-}
+  let el = document.getElementById("typingText");
+
+  if(i < text.length){
+    el.innerHTML += text[i];
+    i++;
+    setTimeout(startTyping,35);
+  }
 }
 
-/* LIGHTBOX */
-function openImage(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightboxImg").src=src;
+/* ❤️ floating hearts */
+function hearts(){
+  setInterval(()=>{
+    let h = document.createElement("div");
+    h.innerHTML = "❤️";
+    h.style.position = "fixed";
+    h.style.left = Math.random()*100 + "vw";
+    h.style.top = "100vh";
+    h.style.fontSize = "18px";
+    h.style.animation = "floatUp 6s linear";
+    document.body.appendChild(h);
+
+    setTimeout(()=>h.remove(),6000);
+  },250);
 }
 
-function closeImage(){
-document.getElementById("lightbox").style.display="none";
+/* 🌹 petals */
+function petals(){
+  setInterval(()=>{
+    let p = document.createElement("div");
+    p.innerHTML = "🌹";
+    p.style.position = "fixed";
+    p.style.left = Math.random()*100 + "vw";
+    p.style.top = "-20px";
+    p.style.fontSize = "16px";
+    p.style.animation = "fall 7s linear";
+    document.body.appendChild(p);
+
+    setTimeout(()=>p.remove(),7000);
+  },400);
 }
 
-/* MUSIC */
-function toggleMusic(){
-if(music.paused) music.play();
-else music.pause();
-}
-
-/* DARK MODE */
-function toggleMode(){
-document.body.classList.toggle("dark");
-}
-
-/* GIFT */
+/* 🎁 gift */
 function openGift(){
-document.getElementById("giftText").innerHTML =
-"❤️ Thank you for being in my life... You are still very special to me.";
-createConfetti();
-}
-
-/* 🌸 FALLING HEARTS */
-setInterval(()=>{
-let p=document.createElement("div");
-p.className="particle";
-p.innerHTML="❤️";
-p.style.left=Math.random()*100+"vw";
-p.style.animationDuration=(3+Math.random()*5)+"s";
-document.body.appendChild(p);
-setTimeout(()=>p.remove(),6000);
-},300);
-
-/* 🎉 CONFETTI */
-function createConfetti(){
-for(let i=0;i<30;i++){
-let c=document.createElement("div");
-c.className="particle";
-c.innerHTML="✨";
-c.style.left=Math.random()*100+"vw";
-c.style.color="#ffcc00";
-document.body.appendChild(c);
-setTimeout(()=>c.remove(),3000);
-}
+  document.getElementById("giftText").innerHTML =
+  "❤️ No matter what happens... you will always matter to me.";
 }
