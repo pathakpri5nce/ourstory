@@ -11,12 +11,12 @@
 
 <body>
 
-<!-- 🎬 CINEMATIC INTRO SCREEN -->
+<!-- 🎬 CINEMATIC INTRO -->
 <div class="intro" id="intro">
-  <h1>My cutieee Divyanshiiiiiiiiiii...</h1>
+  <h1>My cutieeeeeee Divyanshiiiiiii ❤️</h1>
 </div>
 
-<!-- 🎬 HERO -->
+<!-- 🎬 MAIN HERO -->
 <section class="hero">
 
   <video id="bgVideo" loop playsinline class="bg-video">
@@ -27,9 +27,13 @@
 
   <div class="hero-content">
     <h1>I'm Sorry ❤️</h1>
-    <p>Something I made just for you</p>
-    <button onclick="startExperience()">▶ Begin</button>
+    <p>This is my heart in digital form</p>
+
+    <button onclick="startExperience()" class="btn">
+      ▶ Enter My World
+    </button>
   </div>
+
 </section>
 
 <!-- 💌 LETTER -->
@@ -38,9 +42,9 @@
   <p id="typingText"></p>
 </section>
 
-<!-- 📸 GALLERY -->
+<!-- 📸 MEMORY VAULT -->
 <section class="gallery">
-  <h2>Our Memories 📸</h2>
+  <h2>Memory Vault 📸</h2>
   <div class="grid">
     <img src="assets/photos/photo1.jpg">
     <img src="assets/photos/photo2.jpg">
@@ -51,10 +55,15 @@
 
 <!-- 🎁 FINAL GIFT -->
 <section class="gift">
-  <h2>One Last Thing 🎁</h2>
-  <button onclick="openGift()">Open Gift</button>
+  <h2>Final Message 🎁</h2>
+  <button onclick="openGift()">Reveal</button>
   <p id="giftText"></p>
 </section>
+
+<!-- 🎵 AUDIO ENGINE -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="assets/music/background.mp3" type="audio/mpeg">
+</audio>
 
 <script src="script.js"></script>
 </body>

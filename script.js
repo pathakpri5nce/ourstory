@@ -1,36 +1,43 @@
 let i = 0;
 
-const text = "I am truly sorry... I never wanted to hurt you. You are still the most important person in my life ❤️";
+const text = "I am truly sorry... not just with words, but with everything I feel. You matter more than anything in my world ❤️";
 
+/* 🚀 MASTER START */
 function startExperience(){
 
-  // 🎬 video start
-  let video = document.getElementById("bgVideo");
+  const video = document.getElementById("bgVideo");
+  const music = document.getElementById("bgMusic");
+
+  // 🔊 unlock audio (CRITICAL GOD FIX)
   video.muted = false;
   video.volume = 1;
 
-  video.play().catch(()=>{});
+  music.volume = 0.7;
 
-  // 💌 typing
+  // ▶ play video + music safely
+  video.play().catch(()=>{});
+  music.play().catch(()=>{});
+
+  // 💌 start story
   startTyping();
 
-  // ❤️ effects
+  // 🌌 effects
   hearts();
   petals();
 }
 
-/* 💌 typing effect */
+/* 💌 typing */
 function startTyping(){
   let el = document.getElementById("typingText");
 
   if(i < text.length){
     el.innerHTML += text[i];
     i++;
-    setTimeout(startTyping,35);
+    setTimeout(startTyping,30);
   }
 }
 
-/* ❤️ floating hearts */
+/* ❤️ hearts */
 function hearts(){
   setInterval(()=>{
     let h = document.createElement("div");
@@ -41,9 +48,8 @@ function hearts(){
     h.style.fontSize = "18px";
     h.style.animation = "floatUp 6s linear";
     document.body.appendChild(h);
-
     setTimeout(()=>h.remove(),6000);
-  },250);
+  },200);
 }
 
 /* 🌹 petals */
@@ -57,13 +63,12 @@ function petals(){
     p.style.fontSize = "16px";
     p.style.animation = "fall 7s linear";
     document.body.appendChild(p);
-
     setTimeout(()=>p.remove(),7000);
-  },400);
+  },300);
 }
 
 /* 🎁 gift */
 function openGift(){
   document.getElementById("giftText").innerHTML =
-  "❤️ No matter what happens... you will always matter to me.";
+  "❤️ You are not just a memory... you are still my favorite story.";
 }
