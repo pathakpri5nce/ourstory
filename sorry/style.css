@@ -11,13 +11,11 @@ transition:.3s;
 overflow-x:hidden;
 }
 
-/* DARK MODE */
 body.dark{
 background:#0f0f1a;
 color:white;
 }
 
-/* TOP BAR */
 .top-bar{
 position:fixed;
 top:10px;
@@ -33,7 +31,6 @@ border-radius:50%;
 cursor:pointer;
 }
 
-/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -67,63 +64,6 @@ font-size:55px;
 font-family:Dancing Script;
 }
 
-/* CHAT */
-.chat{
-padding:50px;
-max-width:500px;
-margin:auto;
-}
-
-.bubble{
-background:white;
-padding:12px;
-margin:10px 0;
-border-radius:15px;
-width:fit-content;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-animation:fade 1s ease;
-}
-
-.me{
-margin-left:auto;
-background:#ff4d88;
-color:white;
-}
-
-@keyframes fade{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;}
-}
-
-/* GALLERY */
-.gallery{
-padding:60px;
-text-align:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px;
-}
-
-.grid img{
-width:100%;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
-}
-
-.grid img:hover{
-transform:scale(1.05);
-}
-
-/* GIFT */
-.gift{
-text-align:center;
-padding:60px;
-}
-
 button{
 padding:12px 20px;
 background:#ff4d88;
@@ -133,7 +73,43 @@ border-radius:25px;
 cursor:pointer;
 }
 
-/* LIGHTBOX */
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+.gallery .grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.bubble{
+background:white;
+padding:12px;
+margin:10px auto;
+border-radius:15px;
+width:fit-content;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.me{
+background:#ff4d88;
+color:white;
+margin-left:auto;
+}
+
 #lightbox{
 position:fixed;
 display:none;
@@ -147,18 +123,4 @@ justify-content:center;
 #lightbox img{
 max-width:80%;
 border-radius:10px;
-}
-
-/* PARTICLES */
-.particle{
-position:fixed;
-top:-10px;
-color:#ff4d88;
-animation:fall linear infinite;
-}
-
-@keyframes fall{
-to{
-transform:translateY(100vh);
-}
 }

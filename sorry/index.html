@@ -19,9 +19,11 @@
 
 <!-- 🎬 HERO -->
 <section class="hero">
-  <video autoplay loop class="bg-video" controls>
-    <source src="assets/videos/background.mp4">
+
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="assets/videos/background.mp4" type="video/mp4">
   </video>
+
   <div class="overlay"></div>
 
   <div class="hero-content">
@@ -32,7 +34,7 @@
 </section>
 
 <!-- 💬 CHAT APOLOGY -->
-<section class="chat" id="chatBox">
+<section class="chat">
   <div class="bubble me">Hey...</div>
   <div class="bubble me">I made something for you</div>
   <div class="bubble me">I just want to say sorry...</div>
@@ -57,18 +59,15 @@
   <p id="giftText"></p>
 </section>
 
-<!-- 🎵 MUSIC -->
+<!-- 🎵 AUDIO -->
 <audio id="bgMusic" loop>
-  <source src="assets/music/background.mp3">
+  <source src="assets/music/background.mp3" type="audio/mp3">
 </audio>
 
 <!-- 🖼 LIGHTBOX -->
 <div id="lightbox" onclick="closeImage()">
-  <img id="lightboxImg">
+  <img id="lightboxImg" src="">
 </div>
-
-<!-- 🌸 EFFECTS -->
-<div id="particles"></div>
 
 <script src="script.js"></script>
 </body>
